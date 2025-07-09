@@ -1,3 +1,11 @@
-<h1>login works!</h1>
+<h1>Login</h1>
+<!-- TEMPLATE DRIVEN APPROUCH -->
+<form #loginForm="ngForm" (ngSubmit)="formSumbitHandler(loginForm)">
+  <div class="form-group">
+    <label for="email">email</label>
+    <input type="text" name="email" value="">
+  </div>
+  <button type="">login</button>
+</form>
 
 <div class="" routerLink="/home">go back home</div>
