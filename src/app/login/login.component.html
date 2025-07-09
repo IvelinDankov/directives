@@ -1,11 +1,34 @@
 <h1>Login</h1>
 <!-- TEMPLATE DRIVEN APPROUCH -->
-<form #loginForm="ngForm" (ngSubmit)="formSumbitHandler(loginForm)">
+<form #loginForm="ngForm" (ngSubmit)="formSumbitHandler()">
   <div class="form-group">
     <label for="email">email</label>
-    <input type="text" name="email" value="">
+    <input type="text" name="email" value="" ngModel #emailInput="ngModel" required>
+  </div>
+  <div class="form-group">
+    <label for="username">password</label>
+    <input type="text" name="password" value="" ngModel required="true" #password="ngModel">
   </div>
   <button type="">login</button>
 </form>
 
 <div class="" routerLink="/home">go back home</div>
+
+{{loginForm.value | json}}
+
+<br>
+<hr>
+
+
+
+@if ((emailInput.errors?.['required'] || password.errors?.['required']) && emailInput.touched) {
+
+<div style="color: red">
+  Email and Password is required
+</div>
+
+@if (emailInput.value) {}
+<div style="color: red">
+  Email is invalid!
+</div>
+}
