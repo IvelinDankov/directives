@@ -5,3 +5,30 @@
   repellendus assumenda fuga? Amet debitis et impedit autem?</p>
 <hr>
 <router-outlet></router-outlet>
+<hr>
+
+
+<ng-template [ngIf]="true">
+  <div>
+    Simple div 1
+
+  </div>
+  <div>
+    Simple div 2
+
+  </div>
+  <div>
+    Simple div 3
+
+  </div>
+</ng-template>
+
+<button type="" (click)="toggle()">Toggle Btn</button>
+<!-- CUSTOM DIRECTIVES -->
+<div *appStructuralDirective="isShown">
+  Structural Directives - Usage 1
+</div>
+
+<ng-template [appStructuralDirective]="isShown">
+  Structural Directive - Usage 2
+</ng-template>
